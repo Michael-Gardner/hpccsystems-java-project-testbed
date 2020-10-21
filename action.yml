@@ -1,0 +1,5 @@
+name: 'TestBed'
+description: 'testbed for HPCCSystems java projects'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
