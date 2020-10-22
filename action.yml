@@ -1,5 +1,13 @@
 name: 'TestBed'
 description: 'testbed for HPCCSystems java projects'
+inputs:
+    git-repository:
+        description: 'github repository'
+        required: true
+        default: '${{ github.repository }}'
+outputs:
+    benchmark-results:
+        description: 'result of benchmark test'
 runs:
     using: 'docker'
     image: 'Dockerfile'
