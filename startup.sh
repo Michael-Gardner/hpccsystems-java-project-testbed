@@ -8,7 +8,7 @@
 
 echo "arg1 = $1"
 echo "INPUT_GIT-REPOSITORY=${INPUT_GIT-REPOSITORY}"
-echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}""
+echo "GITHUB_REPOSITORY="${GITHUB_REPOSITORY}"
 git --version
 git clone ${INPUT_GIT-REPOSITORY} hpcc4j
 cd hpcc4j
