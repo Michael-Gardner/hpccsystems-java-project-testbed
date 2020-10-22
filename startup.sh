@@ -7,8 +7,10 @@
 /generatedata.sh
 
 echo "arg1 = $1"
+echo "INPUT_GIT-REPOSITORY=${INPUT_GIT-REPOSITORY}"
+echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}""
 git --version
-git clone $1 hpcc4j
+git clone ${INPUT_GIT-REPOSITORY} hpcc4j
 cd hpcc4j
 mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
     -Dmaven.gpg.skip=true clean install -e \
