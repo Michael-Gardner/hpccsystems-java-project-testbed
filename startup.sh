@@ -7,10 +7,9 @@
 /generatedata.sh
 
 echo "arg1 = $1"
-echo "INPUT_GIT-REPOSITORY=${INPUT_GIT-REPOSITORY}"
-echo "GITHUB_REPOSITORY="${GITHUB_REPOSITORY}"
+printenv
 git --version
-git clone ${INPUT_GIT-REPOSITORY} hpcc4j
+git clone ${INPUT_GITREPOSITORY} hpcc4j
 cd hpcc4j
 mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
     -Dmaven.gpg.skip=true clean install -e \
@@ -20,4 +19,4 @@ mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
     --file pom.xml
 
 results="$(cat dfsclient/results.json)"
-echo "::set-output name=benchmark-results::$results"
+echo "::set-output name=benchmarkResults::$results"
