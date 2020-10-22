@@ -6,6 +6,8 @@
 # generate ecl data needed for benchmark tests
 /generatedata.sh
 
+echo "arg1 = $1"
+git --version
 git clone $1 hpcc4j
 cd hpcc4j
 mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
