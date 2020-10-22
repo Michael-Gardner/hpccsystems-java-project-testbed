@@ -3,6 +3,9 @@
 #startup hpccsystems platform
 /etc/init.d/hpcc-init start
 
+# generate ecl data needed for benchmark tests
+/generatedata.sh
+
 git clone $1 hpcc4j
 cd hpcc4j
 mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
