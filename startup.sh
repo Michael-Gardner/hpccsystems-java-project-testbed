@@ -8,7 +8,7 @@
 
 result_file="${INPUT_RESULTFILE}"
 #printenv
-git clone --branch ${GITHUB_REF} ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} clone-repo
+git clone --branch ${GITHUB_REF##[a-zA-Z0-9]*\/} ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} clone-repo
 cd clone-repo
 mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
     -Dmaven.gpg.skip=true clean install -e \
