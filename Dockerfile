@@ -15,4 +15,6 @@ COPY startup.sh /startup.sh
 COPY generatedata.sh /generatedata.sh
 COPY generatebenchmarkdata.sh /generatebenchmarkdata.sh
 
+RUN ls -la
+
 ENTRYPOINT ["/startup.sh"]
