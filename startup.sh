@@ -6,11 +6,10 @@
 # generate ecl data needed for benchmark tests
 /generatedata.sh
 
-echo "arg1 = $1"
-printenv
-git --version
-git clone ${INPUT_GITREPOSITORY} hpcc4j
-cd hpcc4j
+result_file="${INPUT_RESULTFILE}"
+#printenv
+git clone --branch ${GITHUB_REF} ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY} clone-repo
+cd clone-repo
 mvn --batch-mode -Pbenchmark -Dmaven.test.skip=false \
     -Dmaven.gpg.skip=true clean install -e \
     -Dmaven.test.failure.ignore=false \
